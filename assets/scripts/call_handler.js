@@ -3,7 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 var role= urlParams.get('role');
 
 // var connection = new WebSocket('ws://localhost:8000');
-var connection = new WebSocket('ws://oims-g554.onrender.com');
+var connection = new WebSocket('wss://oims-g554.onrender.com');
 var Send_dataChannel, connectedUser, Receive_dataChannel;
 var localId;
 var remoteId;
