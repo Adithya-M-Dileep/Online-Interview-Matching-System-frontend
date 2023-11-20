@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>PeerChat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="..\assets\styles\call_room.css" rel="stylesheet" />
+    <link href="..\assets\styles\popup.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="alert-container">
+      <div
+        class="alert alert-danger"
+        id="alert-dialog"
+        style="display: none"
+      ></div>
+    </div>
+    <div id="videos">
+      <video
+        class="video-player"
+        id="peer_video_frame"
+        autoplay
+        playsinline
+      ></video>
+      <video
+        class="video-player smallFrame"
+        id="client_video_frame"
+        autoplay
+        playsinline
+      ></video>
+    </div>
+
+    <div id="controls">
+      <div class="control-container" id="camera-btn">
+        <img src="..\assets\icons\camera.png" />
+      </div>
+
+      <div class="control-container" id="mic-btn">
+        <img src="..\assets\icons\mic.png" />
+      </div>
+
+      <a href="lobby.html">
+        <div class="control-container" id="leave-btn">
+          <img src="..\assets\icons\phone.png" />
+        </div>
+      </a>
+    </div>
+    <div class="chat-float-btn control-container" id="chat-btn">
+      <img src="..\assets\icons\chat.png" />
+    </div>
+    <div class="chat-window" id="chat-window">
+      <div class="chat-content" id="text-messages"></div>
+      <div id="message__form">
+        <input
+          id="txtMessage"
+          type="text"
+          placeholder="Type Message here"
+          onfocus="addKeyPressListener()"
+        />
+      </div>
+    </div>
+
+    <!-- Modal for progress -->
+    <div class="modal" id="dialog-box" role="dialog">
+      <div class="details-modal">
+        <div class="spinner-box">
+          <div class="pulse-container">
+            <div class="pulse-bubble pulse-bubble-1"></div>
+            <div class="pulse-bubble pulse-bubble-2"></div>
+            <div class="pulse-bubble pulse-bubble-3"></div>
+            <div class="pulse-bubble pulse-bubble-1"></div>
+            <div class="pulse-bubble pulse-bubble-2"></div>
+            <div class="pulse-bubble pulse-bubble-3"></div>
+            <div class="pulse-bubble pulse-bubble-1"></div>
+            <div class="pulse-bubble pulse-bubble-2"></div>
+            <div class="pulse-bubble pulse-bubble-3"></div>
+          </div>
+        </div>
+        <div class="details-modal-content">
+          <p id="dialog-box-content-text"></p>
+        </div>
+        <div class="details-modal-button">
+          <a href="lobby.html" class="details-modal-cancel">Cancel </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="..\assets\scripts\call_handler.js"></script>
+    <script src="..\assets\scripts\call_ui.js"></script>
+  </body>
+</html>
