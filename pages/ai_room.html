@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ai Mock Interview</title>
+    <link href="..\assets\styles\ai_room.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="chat-window" id="chat-window">
+      <div class="chat-content" id="text-messages">
+        <div class="message__wrapper message__wrapper__bot">
+          <div class="message__body">
+            <strong class="message__bot">interviewer</strong>
+            <p class="message__text">
+              Hello, I am your interviewer. Please introduce yourself and
+              briefly describe your background, expertise, and areas of
+              interest. Let's start!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="message__form">
+        <input
+          id="txtMessage"
+          type="text"
+          placeholder="Type Message here"
+          onfocus="addKeyPressListener()"
+        />
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="..\assets\scripts\ai_handler.js"></script>
+  </body>
+</html>
